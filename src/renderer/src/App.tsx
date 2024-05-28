@@ -1,4 +1,3 @@
-import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 
 import { NextUIProvider } from '@nextui-org/react'
