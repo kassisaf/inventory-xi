@@ -1,4 +1,7 @@
-singleQuote: true
+endOfLine: lf
+printWidth: 160
 semi: false
-printWidth: 100
-trailingComma: none
+singleQuote: true
+tabWidth: 2
+trailingComma: es5
+useTabs: false
