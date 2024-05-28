@@ -1,11 +1,13 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 
+import { NextUIProvider } from '@nextui-org/react'
+
 function App(): JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
 
   return (
-    <>
+    <NextUIProvider>
       <img alt="logo" className="logo" src={electronLogo} />
       <div className="creator">Powered by electron-vite</div>
       <div className="text">
@@ -28,7 +30,7 @@ function App(): JSX.Element {
         </div>
       </div>
       <Versions></Versions>
-    </>
+    </NextUIProvider>
   )
 }
 
