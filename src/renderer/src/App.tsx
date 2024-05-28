@@ -1,15 +1,13 @@
-import electronLogo from './assets/electron.svg'
-
-import { NextUIProvider } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
 
 function App(): JSX.Element {
   return (
-    <NextUIProvider>
-      <div className="flex flex-col items-center">
-        <img alt="logo" className="logo" src={electronLogo} />
-        <h1 className="text-5xl">Inventory XI</h1>
-      </div>
-    </NextUIProvider>
+    <div className="flex flex-col items-center gap-2">
+      <h1 className="text-5xl">Inventory XI</h1>
+      <Button color="primary" variant="shadow">
+        Open...
+      </Button>
+    </div>
   )
 }
 
