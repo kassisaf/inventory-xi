@@ -6,6 +6,8 @@ import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
 import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
 import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
 
+import CharacterItemsTable from './components/CharacterItemsTable'
+
 function App(): JSX.Element {
   return (
     <div className="flex h-screen grow flex-col justify-between bg-zinc-900 text-zinc-50 dark">
@@ -30,13 +32,13 @@ function App(): JSX.Element {
         <div className="flex w-full flex-col">
           <Tabs aria-label="Options" variant="underlined">
             <Tab key="photos" title="Zurirose">
-              <span>(Zurirose&apos;s items table)</span>
+              <CharacterItemsTable name="Zurirose" />
             </Tab>
             <Tab key="music" title="Bleakmind">
-              <span>(Bleakmind&apos;s items table)</span>
+              <CharacterItemsTable name="Bleakmind" />
             </Tab>
             <Tab key="videos" title="Braveface">
-              <span>(Braveface&apos;s items table)</span>
+              <CharacterItemsTable name="Braveface" />
             </Tab>
           </Tabs>
         </div>

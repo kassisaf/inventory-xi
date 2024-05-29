@@ -24,7 +24,9 @@ abstract class BaseItem {
     this.id = id
   }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  parseTokens(tokensArray: string[]): void {}
+  parseTokens(tokensArray: string[]): void {
+    return
+  }
   nameMatches(search: string): boolean {
     return this.en?.toLowerCase().includes(search.toLowerCase()) || this.ja?.includes(search) || false
   }
