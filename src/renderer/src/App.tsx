@@ -1,15 +1,16 @@
-import { Tabs, Tab, Card, CardBody, Button } from '@nextui-org/react'
+import { Tabs, Tab, Button, Input, Spinner } from '@nextui-org/react'
 import { HiCog8Tooth as SettingsIcon } from 'react-icons/hi2'
-import { SiKofi as CoffeeIcon } from 'react-icons/si'
+// import { SiKofi as CoffeeIcon } from 'react-icons/si'
 import { FaRegQuestionCircle as HelpIcon } from 'react-icons/fa'
 import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
 import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
+import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
 
 function App(): JSX.Element {
   return (
     <div className="flex h-screen grow flex-col justify-between bg-zinc-900 text-zinc-50 dark">
-      <header className="flex items-center justify-between bg-zinc-700/50 px-6 py-5">
-        <h1 className="bold text-3xl">Inventory XI</h1>
+      <header className="flex items-center justify-between gap-x-6 p-6 pb-2">
+        <Input placeholder="Search items..." startContent={<SearchIcon size="24px" className="mr-1 text-zinc-500" />} />
         <div className="flex items-center gap-3">
           {/* <CoffeeIcon size="32px" className="text-rose-300" /> */}
 
@@ -29,29 +30,21 @@ function App(): JSX.Element {
         <div className="flex w-full flex-col">
           <Tabs aria-label="Options" variant="underlined">
             <Tab key="photos" title="Zurirose">
-              <Card>
-                <CardBody>Zurirose's items table</CardBody>
-              </Card>
+              <span>(Zurirose&apos;s items table)</span>
             </Tab>
             <Tab key="music" title="Bleakmind">
-              <Card>
-                <CardBody>Bleakmind's items table</CardBody>
-              </Card>
+              <span>(Bleakmind&apos;s items table)</span>
             </Tab>
             <Tab key="videos" title="Braveface">
-              <Card>
-                <CardBody>Braveface's items table</CardBody>
-              </Card>
+              <span>(Braveface&apos;s items table)</span>
             </Tab>
           </Tabs>
         </div>
       </main>
 
       <footer className="flex justify-between bg-zinc-700/50 px-3 py-2 text-zinc-200">
-        <div className="flex gap-x-2">
-          <button id="refresh-button" aria-label="Refresh">
-            <RefreshIcon size="24px" />
-          </button>
+        <div className="flex gap-x-2 light">
+          <Spinner size="sm" color="default" className="hidden" />
           <span id="status" className="text-md italic">
             Parsed 22,356 items in 2.6 seconds
           </span>
