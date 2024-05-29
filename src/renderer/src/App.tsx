@@ -3,6 +3,7 @@ import { HiCog8Tooth as SettingsIcon } from 'react-icons/hi2'
 import { SiKofi as CoffeeIcon } from 'react-icons/si'
 import { FaRegQuestionCircle as HelpIcon } from 'react-icons/fa'
 import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
+import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
 
 function App(): JSX.Element {
   return (
@@ -46,12 +47,24 @@ function App(): JSX.Element {
         </div>
       </main>
 
-      <footer className="flex justify-between bg-zinc-700/50 px-6 py-2 text-zinc-200">
-        <div className="flex gap-x-6">
-          <div>#/# slots used</div>
-          <div># recoverable</div>
+      <footer className="flex justify-between bg-zinc-700/50 px-3 py-2 text-zinc-200">
+        <div className="flex gap-x-2">
+          <button id="refresh-button" aria-label="Refresh">
+            <RefreshIcon size="24px" />
+          </button>
+          <span id="status" className="text-md italic">
+            Parsed 22,356 items in 2.6 seconds
+          </span>
         </div>
-        <div className="text-md italic">Parsed 22,356 items in 2.6 seconds</div>
+        <div id="tips" className="flex gap-x-8">
+          {/* <div>#used/#total</div> */}
+          <div className="flex items-center gap-x-2">
+            <span className="text-md"># recoverable</span>
+            <button aria-label="Info">
+              <InfoIcon size="22px" className="text-sky-300" />
+            </button>
+          </div>
+        </div>
       </footer>
     </div>
   )
