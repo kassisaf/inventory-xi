@@ -3,16 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --reserved-space-bottom: 1.5rem
+  --bottom-padding: 6px;
 }
 
 body {
-  min-height: calc(100vh - var(--reserved-space-bottom));
-  margin-bottom: var(--reserved-space-bottom);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
