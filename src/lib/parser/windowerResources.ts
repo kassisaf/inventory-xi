@@ -243,3 +243,5 @@ async function parseWindowerResources(windowerPath: string): Promise<{ items: Ma
 
 const windowerResources = await parseWindowerResources(windowerPath)
 export default windowerResources
+
+console.log(windowerResources)

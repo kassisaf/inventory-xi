@@ -89,7 +89,6 @@ async function getCharacterFromFile(characterName: string, filePath: string): Pr
     character.containers.sort((a, b) => a.name.localeCompare(b.name))
     return character
   } catch (err) {
-    console.error(err)
     return undefined
   }
 }
