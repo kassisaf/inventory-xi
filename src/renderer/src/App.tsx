@@ -5,7 +5,6 @@ import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
 import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
 import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
 
-import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell } from '@nextui-org/table'
 import { Tabs, Tab } from '@nextui-org/tabs'
 import { Button } from '@nextui-org/button'
 import { Input } from '@nextui-org/input'
