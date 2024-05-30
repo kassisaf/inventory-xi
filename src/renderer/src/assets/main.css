@@ -4,11 +4,12 @@
 
 :root {
   --bottom-padding: 6px;
+  @apply bg-zinc-900;
+  @apply text-zinc-50;
 }
 
 body {
-  min-height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
