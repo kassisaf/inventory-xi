@@ -1,10 +1,15 @@
-import { Tabs, Tab, Button, Input, Spinner } from '@nextui-org/react'
 import { HiCog8Tooth as SettingsIcon } from 'react-icons/hi2'
 // import { SiKofi as CoffeeIcon } from 'react-icons/si'
 import { FaRegQuestionCircle as HelpIcon } from 'react-icons/fa'
 import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
 import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
 import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
+
+import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell } from '@nextui-org/table'
+import { Tabs, Tab } from '@nextui-org/tabs'
+import { Button } from '@nextui-org/button'
+import { Input } from '@nextui-org/input'
+import { Spinner } from '@nextui-org/spinner'
 
 import CharacterItemsTable from './components/CharacterItemsTable'
 
