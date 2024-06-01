@@ -5,10 +5,7 @@ import { MdOutlineRefresh as RefreshIcon } from 'react-icons/md'
 import { BsInfoCircle as InfoIcon } from 'react-icons/bs'
 import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
 
-import { Tabs, Tab } from '@nextui-org/tabs'
-import { Button } from '@nextui-org/button'
-import { Input } from '@nextui-org/input'
-import { Spinner } from '@nextui-org/spinner'
+import { Tabs, Tab, Button, Input, Spinner } from '@nextui-org/react'
 
 import CharacterItemsTable from './components/CharacterItemsTable'
 

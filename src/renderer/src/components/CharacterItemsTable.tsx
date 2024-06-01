@@ -1,5 +1,4 @@
-import { Spinner } from '@nextui-org/spinner'
-import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue } from '@nextui-org/table'
+import { Table, TableHeader, TableBody, TableColumn, TableRow, TableCell, getKeyValue, Spinner } from '@nextui-org/react'
 import { useAsyncList } from '@react-stately/data'
 import React from 'react'
 
