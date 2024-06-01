@@ -17,11 +17,12 @@ import {
   Selection,
   ChipProps,
   SortDescriptor,
+  Tabs,
+  Tab,
 } from '@nextui-org/react'
 import { PlusIcon } from '../components/icons/PlusIcon'
-import { VerticalDotsIcon } from '../components/icons/VerticalDotsIcon'
 import { ChevronDownIcon } from '../components/icons/ChevronDownIcon'
-import { SearchIcon } from '../components/icons/SearchIcon'
+import { LuPackageSearch as SearchIcon } from 'react-icons/lu'
 import { columns, users, statusOptions } from '../lib/data'
 import { capitalize } from '../lib/utils'
 
@@ -31,13 +32,12 @@ const statusColorMap: Record<string, ChipProps['color']> = {
   vacation: 'warning',
 }
 
-const INITIAL_VISIBLE_COLUMNS = ['name', 'role', 'status', 'actions']
+const INITIAL_VISIBLE_COLUMNS = ['name', 'role', 'status']
 
 type User = (typeof users)[0]
 
 export default function App(): JSX.Element {
   const [filterValue, setFilterValue] = React.useState('')
-  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set([]))
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(new Set(INITIAL_VISIBLE_COLUMNS))
   const [statusFilter, setStatusFilter] = React.useState<Selection>('all')
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
@@ -109,23 +109,6 @@ export default function App(): JSX.Element {
             {cellValue}
           </Chip>
         )
-      case 'actions':
-        return (
-          <div className="relative flex items-center justify-end gap-2">
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly size="sm" variant="light">
-                  <VerticalDotsIcon className="text-default-300" />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem>View</DropdownItem>
-                <DropdownItem>Edit</DropdownItem>
-                <DropdownItem>Delete</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        )
       default:
         return cellValue
     }
@@ -158,7 +141,7 @@ export default function App(): JSX.Element {
             isClearable
             className="w-full sm:max-w-[44%]"
             placeholder="Search by name..."
-            startContent={<SearchIcon />}
+            startContent={<SearchIcon size="24px" />}
             value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
@@ -211,17 +194,7 @@ export default function App(): JSX.Element {
             </Button>
           </div>
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-small text-default-400">Total {users.length} users</span>
-          <label className="flex items-center text-small text-default-400">
-            Rows per page:
-            <select className="bg-transparent text-small text-default-400 outline-none" onChange={onRowsPerPageChange}>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-            </select>
-          </label>
-        </div>
+        {/* Add here  */}
       </div>
     )
   }, [filterValue, statusFilter, visibleColumns, onSearchChange, onRowsPerPageChange, users.length, hasSearchFilter])
@@ -230,25 +203,21 @@ export default function App(): JSX.Element {
     <Table
       aria-label="Example table with custom cells, pagination and sorting"
       isHeaderSticky
-      classNames={{
-        wrapper: 'max-h-[382px]',
-      }}
-      selectedKeys={selectedKeys}
-      selectionMode="multiple"
+      removeWrapper
+      className="p-4"
+      selectionMode="single"
       sortDescriptor={sortDescriptor}
       topContent={topContent}
-      topContentPlacement="outside"
-      onSelectionChange={setSelectedKeys}
       onSortChange={setSortDescriptor}
     >
       <TableHeader columns={headerColumns}>
         {(column) => (
-          <TableColumn key={column.uid} align={column.uid === 'actions' ? 'center' : 'start'} allowsSorting={column.sortable}>
+          <TableColumn key={column.uid} align="start" allowsSorting={column.sortable}>
             {column.name}
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={'No users found'} items={sortedItems}>
+      <TableBody emptyContent={'No users found'} items={sortedItems} className="flex grow">
         {(item) => <TableRow key={item.id}>{(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}</TableRow>}
       </TableBody>
     </Table>

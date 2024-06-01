@@ -6,7 +6,6 @@ const columns = [
   { name: 'TEAM', uid: 'team' },
   { name: 'EMAIL', uid: 'email' },
   { name: 'STATUS', uid: 'status', sortable: true },
-  { name: 'ACTIONS', uid: 'actions' },
 ]
 
 const statusOptions = [
