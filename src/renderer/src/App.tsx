@@ -15,40 +15,38 @@ import CharacterItemsTable from './components/CharacterItemsTable'
 function App(): JSX.Element {
   return (
     <>
-      <div className="mb-[200px] flex h-screen grow flex-col justify-between">
-        <header className="flex items-center justify-between gap-x-6 p-6 pb-2">
-          <Input placeholder="Search items..." startContent={<SearchIcon size="24px" className="mr-1 text-zinc-500" />} />
-          <div className="flex items-center gap-3">
-            {/* <CoffeeIcon size="32px" className="text-rose-300" /> */}
+      <header className="flex items-center justify-between gap-x-6 p-6 pb-2">
+        <Input placeholder="Search by name..." startContent={<SearchIcon size="24px" className="mr-1 text-zinc-500" />} />
+        <div className="flex items-center gap-3">
+          {/* <CoffeeIcon size="32px" className="text-rose-300" /> */}
 
-            <Button isIconOnly aria-label="Refresh">
-              <RefreshIcon size="32px" />
-            </Button>
-            <Button isIconOnly aria-label="Settings">
-              <SettingsIcon size="32px" />
-            </Button>
-            <Button isIconOnly aria-label="About">
-              <HelpIcon size="28px" />
-            </Button>
-          </div>
-        </header>
+          <Button isIconOnly aria-label="Refresh">
+            <RefreshIcon size="32px" />
+          </Button>
+          <Button isIconOnly aria-label="Settings">
+            <SettingsIcon size="32px" />
+          </Button>
+          <Button isIconOnly aria-label="About">
+            <HelpIcon size="28px" />
+          </Button>
+        </div>
+      </header>
 
-        <main className="grow px-3 py-2">
-          <div className="flex w-full flex-col">
-            <Tabs aria-label="Options" variant="underlined">
-              <Tab key="photos" title="Zurirose">
-                <CharacterItemsTable name="Zurirose" />
-              </Tab>
-              <Tab key="music" title="Bleakmind">
-                <CharacterItemsTable name="Bleakmind" />
-              </Tab>
-              <Tab key="videos" title="Braveface">
-                <CharacterItemsTable name="Braveface" />
-              </Tab>
-            </Tabs>
-          </div>
-        </main>
-      </div>
+      <main className="grow px-3 py-2">
+        <div className="flex w-full flex-col">
+          <Tabs aria-label="Options" variant="underlined">
+            <Tab key="Zurirose" title="Zurirose">
+              <CharacterItemsTable name="Zurirose" />
+            </Tab>
+            <Tab key="Bleakmind" title="Bleakmind">
+              <CharacterItemsTable name="Bleakmind" />
+            </Tab>
+            <Tab key="Braveface" title="Braveface">
+              <CharacterItemsTable name="Braveface" />
+            </Tab>
+          </Tabs>
+        </div>
+      </main>
 
       <footer className="fixed bottom-0 w-full bg-zinc-800">
         <div className="flex justify-between px-3 py-2 text-zinc-200">

@@ -25,6 +25,7 @@
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
     "@nextui-org/button": "^2.0.32",
+    "@nextui-org/dropdown": "^2.1.24",
     "@nextui-org/input": "^2.2.0",
     "@nextui-org/spinner": "^2.0.29",
     "@nextui-org/system": "^2.2.0",

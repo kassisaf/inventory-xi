@@ -115,7 +115,15 @@ export default function CharacterItemsTable(props: CharacterItemsTableProps): JS
   })
 
   return (
-    <Table sortDescriptor={rowList.sortDescriptor} onSortChange={rowList.sort} selectionMode="single" removeWrapper aria-label={props.name + '&apos;s Items'}>
+    <Table
+      isHeaderSticky
+      isVirtualized
+      sortDescriptor={rowList.sortDescriptor}
+      onSortChange={rowList.sort}
+      selectionMode="single"
+      removeWrapper
+      aria-label={props.name + '&apos;s Items'}
+    >
       <TableHeader columns={columns}>
         {(column) => (
           <TableColumn key={column.key} allowsSorting>
